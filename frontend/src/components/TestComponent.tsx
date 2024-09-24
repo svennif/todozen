@@ -9,20 +9,18 @@ function TestComponent() {
 			.catch((err) => console.error(err))
 	}, [])
 
-	return (
-		<ul>
-			{task.map(
-        ({ title, description, status }: { title: string; description: string; status: string }) => {
-				return (
-					<>
-						<h1>{ title }</h1>
-						<p>{ description }</p>
-            <p>{ status }</p>
-					</>
-				)
-			})}
-		</ul>
-	)
+	const taskList = task.map(({ _id, title, description, status }: { _id: string; title: string; description: string; status: string }) => {
+		return (
+			<li key={_id}>
+        <p>{_id}</p>
+				<h1>{title}</h1>
+				<p>{description}</p>
+				<p>{status}</p>
+			</li>
+		)
+	})
+
+	return <ul>{taskList}</ul>
 }
 
 export default TestComponent

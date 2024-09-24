@@ -1,0 +1,11 @@
+@import "./variables";
+
+* {
+  background-color: $dark_void;
+  color: $snow;
+  font-family: $primary-font-family;
+}
+
+li {
+  list-style: none;
+}
